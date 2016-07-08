@@ -1,0 +1,11 @@
+{
+    "require": {
+        "slim/slim": "2.*",
+        "vrana/notorm": "dev-master",
+        "fergusean/nusoap": "^0.9.5",
+        "phpoffice/phpexcel": "dev-master"
+    },
+    "config" : {
+        "vendor-dir" : "./source/packages"
+    }
+}

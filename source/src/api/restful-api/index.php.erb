@@ -1,0 +1,83 @@
+---
+title: IEL - MIS - API
+layout: "layout-api"
+---
+<?php
+ 
+    date_default_timezone_set("Asia/Bangkok");
+ 
+    require_once '../../../packages/autoload.php';
+ 
+    // Create and configure Slim app
+    /* Slim framework 2.x */
+    $app = new \Slim\Slim();
+ 
+
+      /* NuSOAP */
+    $client = new nusoap_client("http://58.137.5.126/epodws/service.asmx?wsdl", true);
+    // $client->soap_defencoding = 'UTF-8';
+
+<% if config[:phase_environment] == "Development" %>
+
+    /* forceEndpoint Partial : Localhost (Internet) */
+    <%= partial "/phaseEnvironment-partials/_forceEndpointViaInternet" %>
+
+<% elsif config[:phase_environment] == "Test" %>
+
+    /* forceEndpoint Partial : Localhost (Intranet) */
+    <%= partial "/phaseEnvironment-partials/_forceEndpointViaIntranet" %>
+
+<% elsif config[:phase_environment] == "Production" %>
+
+    /* forceEndpoint Partial : Production (Intranet) */
+    <%= partial "/phaseEnvironment-partials/_forceEndpointViaIntranet" %>
+
+<% end %>
+
+    $client->soap_defencoding = 'UTF-8';
+    $client->decode_utf8 = false; // แก้ปัญหาตัวอักษรภาษาไทยแสดง ???????? (web service unicode characters dispaly as question marks)
+    $client->encode_utf8 = true;
+
+
+
+    /* PHP Excel : Create new PHPExcel object : http://phpexcel.codeplex.com */
+    $objPHPExcel = new \PHPExcel();
+
+
+
+    /* PHP Function */
+    <%= partial "/Functions/_fn_url" %>
+    <%= partial "/Functions/_fn_exportOperationKPI_calculateShipoutTime" %>
+    <%= partial "/Functions/_fn_exportOperationKPI_calculateFirstSentDatetime" %>
+    <%= partial "/Functions/_fn_exportOperationKPI_calculateTimeBetweenStartToFirstEntryPoint" %>
+    <%= partial "/Functions/_fn_exportOperationKPI_calculateMaximumDeliveryTime" %>
+    <%= partial "/Functions/_fn_exportOperationKPI_calculateTotalTimeDelivery" %>
+
+
+
+    /* Test Manager */
+    <%= partial "/TestManager/_hello" %>
+    $app->get('/testManager/getApiTemplate/',function() use ($app) { getApiTemplate($app); });
+    $app->post('/testManager/postApiTemplate/',function() use ($app) { postApiTemplate($app); });
+    $app->post('/testManager/exportExcelTemplate/',function() use ($app, $objPHPExcel) { exportExcelTemplate($app, $objPHPExcel); });
+
+    /* KPI manager */
+    $app->post('/kpiManager/getOperationKPI/',function() use ($app, $client) { getOperationKPI($app, $client); });
+    $app->post('/kpiManager/exportOperationKPI/',function() use ($app, $client, $objPHPExcel) { exportOperationKPI($app, $client, $objPHPExcel); });
+    $app->post('/kpiManager/boxOperationKPI/',function() use ($app, $client, $objPHPExcel) { boxOperationKPI($app, $client, $objPHPExcel); });
+
+ 
+    // Run app
+    $app->run();
+
+    /* Test Manager Partial */
+    <%= partial "/TestManager/_getApiTemplate" %>
+    <%= partial "/TestManager/_postApiTemplate" %>
+    <%= partial "/TestManager/_exportExcelTemplate" %>
+
+    /* KPI Manager Partial */
+    <%= partial "/KpiManager/_getOperationKPI" %>
+    <%= partial "/KpiManager/_exportOperationKPI" %>
+    <%= partial "/KpiManager/_boxOperationKPI" %>
+ 
+?>
