@@ -1,0 +1,61 @@
+    /**
+     *
+     * @apiName ListMenu
+     * @apiGroup Menu Manager
+     * @apiVersion 0.1.0
+     *
+     * @api {post} /menuManager/listMenu/ List Menu
+     * @apiDescription คำอธิบาย : ในส่วนนี้ทำหน้าสร้างรายการเมนูตามสิทธิ์การเข้าใช้งานระบบ
+     *
+     */
+
+    function listMenu($app, $pdo, $db) {
+
+
+        /* ************************* */
+        /* เริ่มกระบวนการเชื่อมต่อฐานข้อมูล MySQL */
+        /* ************************* */
+        $reports = array();
+        $id = 0;
+
+
+        $results = $db->menu_tb->select('DISTINCT main_menu_title');
+
+        foreach ($results as $result) {
+            $result_main_menu_leaf = $db->menu_tb->where("main_menu_title = ?", $result["main_menu_title"])->fetch();
+
+            <%= partial "/MenuManager/partials/listMenu/_reports_sub_menu_01" %>
+
+            if ($result_main_menu_leaf["main_menu_leaf"] == "FALSE") {
+                $reports[] = array(
+                    "main_menu" => $result["main_menu_title"],
+                    "main_menu_url" => $result_main_menu_leaf["main_menu_url"],
+                    "main_menu_leaf" => $result_main_menu_leaf["main_menu_leaf"]
+                    );
+            } else {
+                $reports[] = array(
+                    "main_menu_title" => $result["main_menu_title"],
+                    "main_menu_url" => $result_main_menu_leaf["main_menu_url"],
+                    "main_menu_leaf" => $result_main_menu_leaf["main_menu_leaf"],
+                    "sub_menu_level_01" => $reports_sub_menu_01
+                    );
+            }
+
+        }
+
+        $rowCount = count($results);
+
+
+
+        /* ************************* */
+        /* เริ่มกระบวนการส่งค่ากลับ */
+        /* ************************* */
+        $resultText = "success";
+
+        $reportResult = array("result" =>  $resultText, "count" => $rowCount, "rows" => $reports);
+        
+        $app->response()->header("Content-Type", "application/json");
+        echo json_encode($reportResult);
+
+
+    };
