@@ -11,6 +11,8 @@
                     // $app->log->debug(date("Y-m-d H:i:s")." : "."results_sub_menu_level_02_title : ".$results_sub_menu_level_02_title);
 
                     if ($result_sub_menu_level_02_title["sub_menu_level_02_title"]) {
+                        <%= partial "/MenuManager/partials/listMenu/_reports_sub_menu_03" %>
+
                         if ($result_sub_menu_level_02_leaf["sub_menu_level_02_leaf"] == "FALSE") {
                             $reports_sub_menu_02[] = array(
                                 "sub_menu_level_02_title" => $result_sub_menu_level_02_title["sub_menu_level_02_title"],
@@ -22,7 +24,7 @@
                                 "sub_menu_level_02_title" => $result_sub_menu_level_02_title["sub_menu_level_02_title"],
                                 "sub_menu_level_02_url" =>  $result_sub_menu_level_02_leaf["sub_menu_level_02_url"],
                                 "sub_menu_level_02_leaf" =>  $result_sub_menu_level_02_leaf["sub_menu_level_02_leaf"],
-                                "sub_menu_level_03" => ""
+                                "sub_menu_level_03" => $reports_sub_menu_03
                                 );
                         }
                     }
