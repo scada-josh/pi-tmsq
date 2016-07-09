@@ -3,40 +3,30 @@
  
     ///////////////////////////////////////////////////// Your
     // var venueAddress = "Grand Place, 1000, Brussels"; // Venue
-    var dailyKpiOperationDatatable;
 
-    var chartDropPerformance;
-    var chartDropPerformanceSeries;
+    // Common Partials : Global Constant
+    <%= partial js_dir + "/common-partials/_var_GlobalConstant" %>
 
-    var chartBoxSentPerformance;
-    var chartBoxSentPerformanceSeries;
-
-    var chartPercentEPOD;
-    var chartPercentEPODSeries;
+    var aciveMenu = "Dashboard";
 
     
     /////////////////////////////////////////////////// Adress
  
     var fn = {
- 
+
         // Launch Functions
         Launch: function () {
-            fn.DailyKpiOperationDatatable();
-            fn.ChartDropPerformance("05/30/2016", "05/30/2016", "bc");
-            fn.ChartBoxSentPerformance("05/30/2016", "05/30/2016", "bc");
-            fn.ChartPercentEPOD("05/30/2016", "05/30/2016", "bc");
+            fn.MenuGenerator();
             fn.Apps();
         },
         
-        // Highcharts
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_ChartDropPerformance" %>
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_ChartBoxSentPerformance" %>
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_ChartPercentEPOD" %>
-        
-        // Daily KPI Operation - Datatable
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_DailyKpiOperationDatatable" %>
+        // Menu Generator
+        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_ConvertToContext" %>
+        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_MenuGenerator" %>
         // Logout
         <%= partial js_dir + "/javascript-desktop-home/partials/_fn_Logout" %>
+        // Common Partials
+        <%= partial js_dir + "/common-partials/_fn_GetAbsolutePath" %>
  		// Apps
         <%= partial js_dir + "/javascript-desktop-home/partials/_fn_Apps" %>
 
