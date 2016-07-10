@@ -1,0 +1,70 @@
+---
+title: "iTMS - Home"
+layout: "layout-desktop-home"
+
+
+baseURL: "/iel-mis/build/src/desktop/home/"
+loginURL: "../Login/index.php"
+homeURL: "./"
+imageURL: "../../../images"
+
+pageTitle: " Dashboard"
+pageSubTitle: "dashboard & statistics"
+
+
+---
+        <!-- BEGIN HEADER -->
+        <div class="page-header">
+
+            <!-- BEGIN HEADER TOP -->
+            <%= partial "common-partials/_page-header-top" %>
+
+            <!-- BEGIN HEADER MENU -->
+            <%= partial "common-partials/_page-header-menu" %>
+
+        </div>
+        <!-- END HEADER -->
+
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+
+                <!-- BEGIN HEADER MENU -->
+                <%= partial "partials/_page-head" %>
+
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- PAGE BREADCRUMBS -->
+                        <%= partial "partials/_page-breadcrumb" %>
+
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner">
+
+                            <div class="row margin-bottom-40  iel-itms-prototype">
+                                <div class="col-md-12">
+                                    <h1>Dashboard</h1>
+                                    <h2>dashboard & statistics</h2>
+                                  <!--   <button type="button" class="btn btn-danger" disabled>ตัวอย่างหน้าจอ (Mock up)</button>
+                                    <button type="button" class="btn btn-danger" disabled>Prototype</button>
+                                    <button type="button" class="btn btn-danger" disabled>BPMN</button> -->
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+            
+        </div>
+        <!-- END CONTAINER -->
+
+        <!-- FOOTER -->
+        <%= partial "common-partials/_footer" %>
