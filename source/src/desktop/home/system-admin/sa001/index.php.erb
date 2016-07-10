@@ -1,26 +1,29 @@
 ---
-title: "MIS - Home"
-layout: "layout-desktop-home"
+title: "iTMS - SA001"
+layout: "layout-desktop-home-systemAdmin-sa001"
 
 
-baseURL: "/iel-mis/build/src/desktop/home/"
-loginURL: "../Login/index.php"
-homeURL: "./"
-imageURL: "../../../images"
+baseURL: "/iel-mis/build/src/desktop/home/system-admin/sa001/"
+loginURL: "../../../Login/index.php"
+homeURL: "./../../"
+imageURL: "../../../../../images"
 
-pageTitle: " Dashboard"
-pageSubTitle: "dashboard & statistics"
+
+pageTitle: " System Admin"
+pageSubTitle: "SA001 - Status"
 
 
 ---
+
+
         <!-- BEGIN HEADER -->
         <div class="page-header">
 
             <!-- BEGIN HEADER TOP -->
-            <%= partial "common-partials/_page-header-top" %>
+            <%= partial partials_desktop_home + "/common-partials/_page-header-top" %>
 
             <!-- BEGIN HEADER MENU -->
-            <%= partial "common-partials/_page-header-menu" %>
+            <%= partial partials_desktop_home + "/common-partials/_page-header-menu" %>
 
         </div>
         <!-- END HEADER -->
@@ -46,11 +49,11 @@ pageSubTitle: "dashboard & statistics"
 
                             <div class="row margin-bottom-40  iel-itms-prototype">
                                 <div class="col-md-12">
-                                    <h1>Dashboard</h1>
-                                    <h2>dashboard & statistics</h2>
-                                  <!--   <button type="button" class="btn btn-danger" disabled>ตัวอย่างหน้าจอ (Mock up)</button>
-                                    <button type="button" class="btn btn-danger" disabled>Prototype</button>
-                                    <button type="button" class="btn btn-danger" disabled>BPMN</button> -->
+                                    <h1>System Admin</h1>
+                                    <h2>SA001 - Status</h2>
+                                   <!--  <button type="button" class="btn btn-danger">ตัวอย่างหน้าจอ (Mock up)</button>
+                                    <button type="button" class="btn btn-danger">Prototype</button>
+                                    <button type="button" class="btn btn-danger">BPMN</button> -->
                                 </div>
                             </div>
                           
@@ -67,4 +70,4 @@ pageSubTitle: "dashboard & statistics"
         <!-- END CONTAINER -->
 
         <!-- FOOTER -->
-        <%= partial "common-partials/_footer" %>
+        <%= partial partials_desktop_home + "/common-partials/_footer" %>

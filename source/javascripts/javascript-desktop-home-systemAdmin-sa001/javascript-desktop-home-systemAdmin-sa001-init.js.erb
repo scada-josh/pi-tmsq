@@ -7,8 +7,10 @@
     // Common Partials : Global Constant
     <%= partial js_dir + "/common-partials/_var_GlobalConstant" %>
 
-    var API_PATH = "../../api/restful-api";
-    var aciveMenu = "Dashboard";
+    
+    var API_PATH = "../../../../api/restful-api";
+    var aciveMenu = "System Admin";
+
 
     
     /////////////////////////////////////////////////// Adress
@@ -22,14 +24,14 @@
         },
         
         // Menu Generator
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_ConvertToContext" %>
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_MenuGenerator" %>
+        <%= partial js_dir + "/javascript-desktop-home-systemAdmin-sa001/partials/_fn_ConvertToContext" %>
+        <%= partial js_dir + "/javascript-desktop-home-systemAdmin-sa001/partials/_fn_MenuGenerator" %>
         // Logout
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_Logout" %>
+        <%= partial js_dir + "/javascript-desktop-home-systemAdmin-sa001/partials/_fn_Logout" %>
         // Common Partials
         <%= partial js_dir + "/common-partials/_fn_GetAbsolutePath" %>
  		// Apps
-        <%= partial js_dir + "/javascript-desktop-home/partials/_fn_Apps" %>
+        <%= partial js_dir + "/javascript-desktop-home-systemAdmin-sa001/partials/_fn_Apps" %>
 
     };
  
