@@ -1,20 +1,19 @@
 ---
-title: "iTMS - MD001"
-layout: "layout-desktop-home-masterData-md001"
+title: "iTMS - OB002"
+layout: "layout-desktop-home-dd-ob002"
 
 
-baseURL: "/iel-mis/build/src/desktop/home/master-data/md001/"
+baseURL: "/iel-mis/build/src/desktop/home/dd/ob002/"
 loginURL: "../../../Login/index.php"
 homeURL: "../../"
 imageURL: "../../../../../images"
 
+pageTitle: " DD"
+pageSubTitle: "Direct dispatch"
 
-pageTitle: " Master Data"
-pageSubTitle: "Master Data Manager"
 
 
 ---
-
 
 <div class="page-wrapper">
     <div class="page-wrapper-row">
@@ -57,15 +56,8 @@ pageSubTitle: "Master Data Manager"
                             <!-- BEGIN PAGE CONTENT INNER -->
                             <div class="page-content-inner">
 
-                                <div class="row margin-bottom-40  iel-itms-prototype">
-                                    <div class="col-md-12">
-                                        <h1>Master Data</h1>
-                                        <h2>MD001 - ข้อมูลลูกค้า</h2>
-                                       <!--  <button type="button" class="btn btn-danger">ตัวอย่างหน้าจอ (Mock up)</button>
-                                        <button type="button" class="btn btn-danger">Prototype</button>
-                                        <button type="button" class="btn btn-danger">BPMN</button> -->
-                                    </div>
-                                </div>
+                                <%= partial partials_desktop_home + "/dd/ob002/partials/_prototype_cover" %>
+
 
                             </div>
                             <!-- END PAGE CONTENT INNER -->
@@ -84,6 +76,7 @@ pageSubTitle: "Master Data Manager"
     <div class="page-wrapper-row">
         <div class="page-wrapper-bottom">
             <!-- FOOTER -->
+
             <%= partial partials_desktop_home + "/common-partials/_footer" %>
         </div>
     </div>
