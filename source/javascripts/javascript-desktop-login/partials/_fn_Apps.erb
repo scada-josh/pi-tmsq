@@ -1,0 +1,18 @@
+// Apps
+Apps: function () {
+	console.log('Apps');
+
+    // init background slide images
+    $('.login-bg').backstretch([
+        IMAGE_PATH + "/iel-itms/assets/login/bg1.jpg",
+        IMAGE_PATH + "/iel-itms/assets/login/bg2.jpg",
+        IMAGE_PATH + "/iel-itms/assets/login/bg3.jpg"
+        ], {
+          fade: 1000,
+          duration: 8000
+        }
+    );
+
+    $('.forget-form').hide();
+}
+

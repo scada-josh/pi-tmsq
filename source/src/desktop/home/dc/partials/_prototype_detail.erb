@@ -1,0 +1,31 @@
+
+
+
+                                                <!-- BEGIN Portlet PORTLET-->
+                                                <div class="portlet light bordered" id="prototypes-canvas">
+                                                    <div class="portlet-title">
+                                                        <div class="caption font-green-sharp">
+                                                            <i class="icon-speech font-green-sharp"></i>
+                                                            <span class="caption-subject bold uppercase"> Prototypes</span>
+                                                            <span class="caption-helper">ตัวอย่างหน้าจอ...</span>
+                                                        </div>
+                                                        <div class="tools">
+                                                            <a href="" class="collapse"> </a>
+                                                            <a href="" class="fullscreen"> </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="portlet-body">
+
+				                                        <div class="portfolio-content portfolio-4">
+				                                            <div id="js-grid-full-width" class="cbp" >
+
+				                                                <% 12.times do |num| %>
+				                                                <%= partial(partials_desktop_home + "/dc/partials/_prototype_detail_item", :locals => { :index => num+1 } ) %>
+				                                                <% end %>
+				                                               
+				                                            </div>
+				                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- END Portlet PORTLET-->

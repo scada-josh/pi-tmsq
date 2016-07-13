@@ -11,6 +11,10 @@ imageURL: "../../../../images"
 pageTitle: " DC"
 pageSubTitle: "Distribution Center"
 
+imagePath_600x600: "../../../../images/iel-itms/DC/img-prototypes/600x600"
+imagePath_1200x900: "../../../../images/iel-itms/DC/img-prototypes/1200x900"
+pageMenu: "DC"
+
 ---
 
 <div class="page-wrapper">
@@ -54,15 +58,9 @@ pageSubTitle: "Distribution Center"
                             <!-- BEGIN PAGE CONTENT INNER -->
                             <div class="page-content-inner">
 
-                                <div class="row margin-bottom-40  iel-itms-prototype">
-                                    <div class="col-md-12">
-                                        <h1>DC</h1>
-                                        <h2>Distribution Center</h2>
-                                       <!--  <button type="button" class="btn btn-danger">ตัวอย่างหน้าจอ (Mock up)</button>
-                                        <button type="button" class="btn btn-danger">Prototype</button>
-                                        <button type="button" class="btn btn-danger">BPMN</button> -->
-                                    </div>
-                                </div> 
+                                <%= partial partials_desktop_home + "/dc/partials/_prototype_cover" %>
+                                <%= partial partials_desktop_home + "/dc/partials/_prototype_detail" %>
+
 
                             </div>
                             <!-- END PAGE CONTENT INNER -->
@@ -81,6 +79,7 @@ pageSubTitle: "Distribution Center"
     <div class="page-wrapper-row">
         <div class="page-wrapper-bottom">
             <!-- FOOTER -->
+
             <%= partial partials_desktop_home + "/common-partials/_footer" %>
         </div>
     </div>
