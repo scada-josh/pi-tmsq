@@ -8,6 +8,7 @@
     "chosen-bootstrap": "^1.1.0",
     "numeral": "^1.5.3",
     "smooth-scroll": "https://github.com/cferdinandi/smooth-scroll.git#^9.1.4",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "socket.io.client": "^1.3.5"
   }
 }

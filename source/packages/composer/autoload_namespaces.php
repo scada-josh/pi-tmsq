@@ -7,5 +7,6 @@ $baseDir = dirname(dirname($vendorDir));
 
 return array(
     'Slim' => array($vendorDir . '/slim/slim'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'PHPExcel' => array($vendorDir . '/phpoffice/phpexcel/Classes'),
 );
